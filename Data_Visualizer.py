@@ -4,7 +4,7 @@ import numpy as np
 
 #function to compare subject_scores
 def subject_compare(subject1,subject2):
-    while(subject1 < 9 and subject2 < 9 and subject1 >= 0 and subject2 >= 0):
+    while(subject1 <= 9 and subject2 <= 9 and subject1 >= 0 and subject2 >= 0):
         print("Enter the 2 subjects which you want to compare :")
         print("1 -> ME      2 -> DC       3 -> CD")
         print("4 -> CG      5 -> OOMD     6 -> OE")
