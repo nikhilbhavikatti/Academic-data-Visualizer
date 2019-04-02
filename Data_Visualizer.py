@@ -29,7 +29,7 @@ def subject_compare(division,subject1,subject2):
                 break
             subject2 = input()
             subject2 = int(subject2)
-            if(subject1 > 9 or subject2 > 9 or subject1 < 0 or subject2 < 0):
+            if(subject1 > 9 or subject2 > 9 or subject1 <= 0 or subject2 <= 0):
                 print("Invalid Option!")
                 subject1 = 0
                 subject2 = 0
