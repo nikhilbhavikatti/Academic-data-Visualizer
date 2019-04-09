@@ -141,7 +141,7 @@ def division_summary(division):
 #function to provide Overall summary Division wise
 def division_summary(division):
     grades = 'S+','S','A','B','C','D','E','F'
-    colors1 = ['gold','yellowgreen', 'lightskyblue', 'lightcoral', 'silver','orange','pink','red']
+    colors = ['gold','yellowgreen', 'lightskyblue', 'lightcoral', 'silver','orange','pink','red']
     countSS,countS,countA,countB,countC,countD,countE,countF = 0,0,0,0,0,0,0,0
 
     while(division == 1 or division == 2 or division == 3 or division == 4 or division == 0):
@@ -1148,39 +1148,39 @@ def division_summary(division):
         the_grid = GridSpec(3, 3)
 
         plt.subplot(the_grid[0, 0], aspect=1, title='ME')
-        plt.pie(ME, labels=grades, colors=colors1, pctdistance = 0.8,
+        plt.pie(ME, labels=grades, colors=colors, pctdistance = 0.8,
         autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
 
         plt.subplot(the_grid[0, 1], aspect=1, title='DC')
-        plt.pie(DC, labels=grades, colors=colors1, pctdistance = 0.8,
+        plt.pie(DC, labels=grades, colors=colors, pctdistance = 0.8,
         autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
 
         plt.subplot(the_grid[0, 2], aspect=1, title='CD')
-        plt.pie(CD, labels=grades, colors=colors1, pctdistance = 0.8,
+        plt.pie(CD, labels=grades, colors=colors, pctdistance = 0.8,
         autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
 
         plt.subplot(the_grid[1, 0], aspect=1, title='CG')
-        plt.pie(CG, labels=grades, colors=colors1, pctdistance = 0.8,
+        plt.pie(CG, labels=grades, colors=colors, pctdistance = 0.8,
         autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
 
         plt.subplot(the_grid[1, 1], aspect=1, title='OOMD')
-        plt.pie(OOMD, labels=grades, colors=colors1, pctdistance = 0.8,
+        plt.pie(OOMD, labels=grades, colors=colors, pctdistance = 0.8,
         autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
 
         plt.subplot(the_grid[1, 2], aspect=1, title='OE')
-        plt.pie(OE, labels=grades, colors=colors1, pctdistance = 0.8,
+        plt.pie(OE, labels=grades, colors=colors, pctdistance = 0.8,
         autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
 
         plt.subplot(the_grid[2, 0], aspect=1, title='SD Lab')
-        plt.pie(SD_Lab, labels=grades, colors=colors1, pctdistance = 0.8,
+        plt.pie(SD_Lab, labels=grades, colors=colors, pctdistance = 0.8,
         autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
 
         plt.subplot(the_grid[2, 1], aspect=1, title='CG Lab')
-        plt.pie(CG_Lab, labels=grades, colors=colors1, pctdistance = 0.78,
+        plt.pie(CG_Lab, labels=grades, colors=colors, pctdistance = 0.78,
         autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
 
         plt.subplot(the_grid[2, 2], aspect=1, title='CIP')
-        plt.pie(CIP, labels=grades, colors=colors1, pctdistance = 0.8,
+        plt.pie(CIP, labels=grades, colors=colors, pctdistance = 0.8,
         autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
 
         plt.suptitle('6th semester ' + divisions[division] + ' Division Overall performance', fontsize=16)
