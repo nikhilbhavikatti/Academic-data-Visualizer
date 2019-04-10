@@ -3,141 +3,6 @@ import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 import numpy as np
 
-#function to compare subject scores division wise
-def subject_compare(division,subject1,subject2):
-    while(division == 1 or division == 2 or division == 3 or division == 4 or division == 0):
-        print("Enter the Division :")
-        print("1 -> A   2 -> B   3 -> C   4 -> D")
-        print("Press 0 to go back ")
-        division = input("Division : ")
-        division = int(division)
-        if(division == 0):
-            break
-        if(division > 4 or division < 0):
-            print("Invalid Option!")
-            division = 0
-            continue
-        while(subject1 <= 9 and subject2 <= 9 and subject1 >= 0 and subject2 >= 0):
-            print("Enter the 2 subjects which you want to compare in "
-                  + divisions[division] + " division :")
-            print("1 -> ME      2 -> DC       3 -> CD")
-            print("4 -> CG      5 -> OOMD     6 -> OE")
-            print("7 -> SD Lab  8 -> CG Lab   9 -> CIP")
-            print("Press 0 to go back ")
-            subject1 = input("Subject 1 : ")
-            subject1 = int(subject1)
-            if(subject1 == 0):
-                break
-            subject2 = input("Subject 2 : ")
-            subject2 = int(subject2)
-            if(subject1 > 9 or subject2 > 9 or subject1 <= 0 or subject2 <= 0):
-                print("Invalid Option!")
-                subject1 = 0
-                subject2 = 0
-                continue
-            if(division == 1):
-                plt.hist([subject_scores_A[subject1],subject_scores_A[subject2]],
-                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
-                plt.title('6th Semester A Division Subject wise performance')
-            elif(division == 2):
-                plt.hist([subject_scores_B[subject1],subject_scores_B[subject2]],
-                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
-                plt.title('6th Semester B Division Subject wise performance')
-            elif(division == 3):
-                plt.hist([subject_scores_C[subject1],subject_scores_C[subject2]],
-                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
-                plt.title('6th Semester C Division Subject wise performance')
-            elif(division == 4):
-                plt.hist([subject_scores_D[subject1],subject_scores_D[subject2]],
-                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
-                plt.title('6th Semester D Division Subject wise performance')
-            #end of if-else
-            plt.grid(axis='y', alpha=0.6)
-            #plt.xlabel("GPA")
-            plt.ylabel("Number of Students")
-            plt.xticks(range(0, 0))
-            plt.yticks(range(1, 30))
-            plt.legend([subject_names[subject1],subject_names[subject2]])
-            plt.text(-0.5,-1, r'$0$')
-            plt.text(0.5,-1, r'$1$')
-            plt.text(1.5,-1, r'$2$')
-            plt.text(2.5,-1, r'$3$')
-            plt.text(3.5,-1, r'$4$')
-            plt.text(4.5,-1, r'$5$')
-            plt.text(5.5,-1, r'$6$')
-            plt.text(6.5,-1, r'$7$')
-            plt.text(7.5,-1, r'$8$')
-            plt.text(8.5,-1, r'$9$')
-            plt.text(9.5,-1, r'$10$')
-            plt.show()
-
-#function to compare division scores subject wise
-def subject_summary(subject):
-    while(subject >= 0 and subject <= 9):
-        print("Enter the subject  :")
-        print("1 -> ME      2 -> DC       3 -> CD")
-        print("4 -> CG      5 -> OOMD     6 -> OE")
-        print("7 -> SD Lab  8 -> CG Lab   9 -> CIP")
-        print("Press 0 to go back ")
-        subject = input("Subject : ")
-        subject = int(subject)
-        if(subject == 0):
-            break
-        if(subject > 9 or subject < 0):
-            print("Invalid Option!")
-            subject = 0
-            continue
-        #Plot a histogram comparing scores of selected subject division wise
-        plt.hist([subject_scores_A[subject],subject_scores_B[subject],subject_scores_C[subject],
-                subject_scores_D[subject]],bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
-        plt.grid(axis='y', alpha=0.6)
-        #plt.xlabel("GPA")
-        plt.ylabel("Number of Students")
-        plt.xticks(range(0, 0))
-        plt.yticks(range(1, 30))
-        plt.title('6th Semester ' + subject_names[subject] + ' Subject Overall Performance')
-        plt.legend(['A Division','B Division','C Division','D Division'])
-        plt.text(-0.5,-1, r'$0$')
-        plt.text(0.5,-1, r'$1$')
-        plt.text(1.5,-1, r'$2$')
-        plt.text(2.5,-1, r'$3$')
-        plt.text(3.5,-1, r'$4$')
-        plt.text(4.5,-1, r'$5$')
-        plt.text(5.5,-1, r'$6$')
-        plt.text(6.5,-1, r'$7$')
-        plt.text(7.5,-1, r'$8$')
-        plt.text(8.5,-1, r'$9$')
-        plt.text(9.5,-1, r'$10$')
-        plt.show()
-
-#function to provide Overall summary Division wise
-def division_summary(division):
-    while(subject >= 0 and subject <= 9):
-        print("Enter the subject  :")
-        print("1 -> ME      2 -> DC       3 -> CD")
-        print("4 -> CG      5 -> OOMD     6 -> OE")
-        print("7 -> SD Lab  8 -> CG Lab   9 -> CIP")
-        print("Press 0 to go back ")
-        subject = input("Subject : ")
-        subject = int(subject)
-        if(subject == 0):
-            break
-        if(subject > 9 or subject < 0):
-            print("Invalid Option!")
-            subject = 0
-            continue
-        #Plot a histogram comparing scores of selected subject division wise
-        plt.hist([subject_scores_A[subject],subject_scores_B[subject],subject_scores_C[subject],
-                subject_scores_D[subject]],bins=[0,1,2,3,4,5,6,7,8,9,10,11],rwidth=0.75)
-        plt.grid(axis='y', alpha=0.6)
-        plt.xlabel("GPA")
-        plt.ylabel("Number of Students")
-        plt.xticks(range(0, 11))
-        plt.yticks(range(1, 30))
-        plt.title('6th Semester ' + subject_names[subject] + ' Subject Overall Performance')
-        plt.legend(['A Division','B Division','C Division','D Division'])
-        plt.show()
-
 #function to provide Overall summary Division wise
 def division_summary(division):
     grades = 'S+','S','A','B','C','D','E','F'
@@ -158,7 +23,13 @@ def division_summary(division):
         print("1 -> A   2 -> B   3 -> C   4 -> D")
         print("Press 0 to go back ")
         division = input("Division : ")
-        division = int(division)
+        try :
+            division = int(division)
+        except :
+            print('Invalid option')
+            division = 0
+            continue
+
         if(division == 0):
             break
         if(division > 4 or division < 0):
@@ -1186,6 +1057,136 @@ def division_summary(division):
         plt.suptitle('6th semester ' + divisions[division] + ' Division Overall performance', fontsize=16)
         plt.show()
 
+#function to compare division scores subject wise
+def subject_summary(subject):
+    while(subject >= 0 and subject <= 9):
+        print("Enter the subject  :")
+        print("1 -> ME      2 -> DC       3 -> CD")
+        print("4 -> CG      5 -> OOMD     6 -> OE")
+        print("7 -> SD Lab  8 -> CG Lab   9 -> CIP")
+        print("Press 0 to go back ")
+        subject = input("Subject : ")
+        try :
+            subject = int(subject)
+        except :
+            print('Invalid option')
+            subject = 0
+            continue
+
+        if(subject == 0):
+            break
+        if(subject > 9 or subject < 0):
+            print("Invalid Option!")
+            subject = 0
+            continue
+        #Plot a histogram comparing scores of selected subject division wise
+        plt.hist([subject_scores_A[subject],subject_scores_B[subject],subject_scores_C[subject],
+                subject_scores_D[subject]],bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
+        plt.grid(axis='y', alpha=0.6)
+        #plt.xlabel("GPA")
+        plt.ylabel("Number of Students")
+        plt.xticks(range(0, 0))
+        plt.yticks(range(1, 30))
+        plt.title('6th Semester ' + subject_names[subject] + ' Subject Overall Performance')
+        plt.legend(['A Division','B Division','C Division','D Division'])
+        plt.text(-0.5,-1, r'$0$')
+        plt.text(0.5,-1, r'$1$')
+        plt.text(1.5,-1, r'$2$')
+        plt.text(2.5,-1, r'$3$')
+        plt.text(3.5,-1, r'$4$')
+        plt.text(4.5,-1, r'$5$')
+        plt.text(5.5,-1, r'$6$')
+        plt.text(6.5,-1, r'$7$')
+        plt.text(7.5,-1, r'$8$')
+        plt.text(8.5,-1, r'$9$')
+        plt.text(9.5,-1, r'$10$')
+        plt.show()
+
+#function to compare subject scores division wise
+def subject_compare(division,subject1,subject2):
+    while(division == 1 or division == 2 or division == 3 or division == 4 or division == 0):
+        print("Enter the Division :")
+        print("1 -> A   2 -> B   3 -> C   4 -> D")
+        print("Press 0 to go back ")
+        division = input("Division : ")
+        try :
+            division = int(division)
+        except :
+            print('Invalid option')
+            division = 0
+            continue
+
+        if(division == 0):
+            break
+        if(division > 4 or division < 0):
+            print("Invalid Option!")
+            division = 0
+            continue
+        while(subject1 <= 9 and subject2 <= 9 and subject1 >= 0 and subject2 >= 0):
+            print("Enter the 2 subjects which you want to compare in "
+                  + divisions[division] + " division :")
+            print("1 -> ME      2 -> DC       3 -> CD")
+            print("4 -> CG      5 -> OOMD     6 -> OE")
+            print("7 -> SD Lab  8 -> CG Lab   9 -> CIP")
+            print("Press 0 to go back ")
+            subject1 = input("Subject 1 : ")
+            try :
+                subject1 = int(subject1)
+            except :
+                print('Invalid option')
+                subject1 = 0
+                continue
+
+            if(subject1 == 0):
+                break
+            subject2 = input("Subject 2 : ")
+            try :
+                subject2 = int(subject2)
+            except :
+                print('Invalid option')
+                subject2 = 0
+                continue
+
+            if(subject1 > 9 or subject2 > 9 or subject1 <= 0 or subject2 <= 0):
+                print("Invalid Option!")
+                subject1 = 0
+                subject2 = 0
+                continue
+            if(division == 1):
+                plt.hist([subject_scores_A[subject1],subject_scores_A[subject2]],
+                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
+                plt.title('6th Semester A Division Subject wise performance')
+            elif(division == 2):
+                plt.hist([subject_scores_B[subject1],subject_scores_B[subject2]],
+                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
+                plt.title('6th Semester B Division Subject wise performance')
+            elif(division == 3):
+                plt.hist([subject_scores_C[subject1],subject_scores_C[subject2]],
+                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
+                plt.title('6th Semester C Division Subject wise performance')
+            elif(division == 4):
+                plt.hist([subject_scores_D[subject1],subject_scores_D[subject2]],
+                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
+                plt.title('6th Semester D Division Subject wise performance')
+            #end of if-else
+            plt.grid(axis='y', alpha=0.6)
+            #plt.xlabel("GPA")
+            plt.ylabel("Number of Students")
+            plt.xticks(range(0, 0))
+            plt.yticks(range(1, 30))
+            plt.legend([subject_names[subject1],subject_names[subject2]])
+            plt.text(-0.5,-1, r'$0$')
+            plt.text(0.5,-1, r'$1$')
+            plt.text(1.5,-1, r'$2$')
+            plt.text(2.5,-1, r'$3$')
+            plt.text(3.5,-1, r'$4$')
+            plt.text(4.5,-1, r'$5$')
+            plt.text(5.5,-1, r'$6$')
+            plt.text(6.5,-1, r'$7$')
+            plt.text(7.5,-1, r'$8$')
+            plt.text(8.5,-1, r'$9$')
+            plt.text(9.5,-1, r'$10$')
+            plt.show()
 
 #read excel file data of all 4 divisions
 df1 = pd.read_excel("Result_6.xlsx","Sheet1")
@@ -1328,7 +1329,12 @@ while(number == 1 or number == 2 or number == 0 or number == 3 or number == 4):
     print("0 --> Exit")
     print("-----------------------------------------------------------------------------------")
     number = input("Enter Option : ")
-    number = int(number)
+    try :
+        number = int(number)
+    except :
+        print('Invalid option')
+        number = 0
+        continue
 
     #Get Overall Summary of 6th semester CSE
     if(number == 1):
@@ -1366,3 +1372,4 @@ while(number == 1 or number == 2 or number == 0 or number == 3 or number == 4):
         exit()
     else :
         print("Invalid Option!")
+        number = 0
