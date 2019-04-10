@@ -37,19 +37,19 @@ def subject_compare(division,subject1,subject2):
                 continue
             if(division == 1):
                 plt.hist([subject_scores_A[subject1],subject_scores_A[subject2]],
-                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.85)
+                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
                 plt.title('6th Semester A Division Subject wise performance')
             elif(division == 2):
                 plt.hist([subject_scores_B[subject1],subject_scores_B[subject2]],
-                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.85)
+                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
                 plt.title('6th Semester B Division Subject wise performance')
             elif(division == 3):
                 plt.hist([subject_scores_C[subject1],subject_scores_C[subject2]],
-                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.85)
+                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
                 plt.title('6th Semester C Division Subject wise performance')
             elif(division == 4):
                 plt.hist([subject_scores_D[subject1],subject_scores_D[subject2]],
-                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.85)
+                        bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
                 plt.title('6th Semester D Division Subject wise performance')
             #end of if-else
             plt.grid(axis='y', alpha=0.6)
@@ -89,7 +89,7 @@ def subject_summary(subject):
             continue
         #Plot a histogram comparing scores of selected subject division wise
         plt.hist([subject_scores_A[subject],subject_scores_B[subject],subject_scores_C[subject],
-                subject_scores_D[subject]],bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.85)
+                subject_scores_D[subject]],bins=[-0.9,0.1,1.1,2.1,3.1,4.1,5.1,6.1,7.1,8.1,9.1,10.1],rwidth=0.75)
         plt.grid(axis='y', alpha=0.6)
         #plt.xlabel("GPA")
         plt.ylabel("Number of Students")
@@ -128,7 +128,7 @@ def division_summary(division):
             continue
         #Plot a histogram comparing scores of selected subject division wise
         plt.hist([subject_scores_A[subject],subject_scores_B[subject],subject_scores_C[subject],
-                subject_scores_D[subject]],bins=[0,1,2,3,4,5,6,7,8,9,10,11],rwidth=0.85)
+                subject_scores_D[subject]],bins=[0,1,2,3,4,5,6,7,8,9,10,11],rwidth=0.75)
         plt.grid(axis='y', alpha=0.6)
         plt.xlabel("GPA")
         plt.ylabel("Number of Students")
@@ -1148,40 +1148,40 @@ def division_summary(division):
         the_grid = GridSpec(3, 3)
 
         plt.subplot(the_grid[0, 0], aspect=1, title='ME')
-        plt.pie(ME, labels=grades, colors=colors, pctdistance = 0.8,
-        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
+        plt.pie(ME, labels=grades, colors=colors, pctdistance = 0.85,
+        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.165)
 
         plt.subplot(the_grid[0, 1], aspect=1, title='DC')
-        plt.pie(DC, labels=grades, colors=colors, pctdistance = 0.8,
-        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
+        plt.pie(DC, labels=grades, colors=colors, pctdistance = 0.85,
+        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.165)
 
         plt.subplot(the_grid[0, 2], aspect=1, title='CD')
-        plt.pie(CD, labels=grades, colors=colors, pctdistance = 0.8,
-        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
+        plt.pie(CD, labels=grades, colors=colors, pctdistance = 0.85,
+        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.165)
 
         plt.subplot(the_grid[1, 0], aspect=1, title='CG')
-        plt.pie(CG, labels=grades, colors=colors, pctdistance = 0.8,
-        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
+        plt.pie(CG, labels=grades, colors=colors, pctdistance = 0.85,
+        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.165)
 
         plt.subplot(the_grid[1, 1], aspect=1, title='OOMD')
-        plt.pie(OOMD, labels=grades, colors=colors, pctdistance = 0.8,
-        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
+        plt.pie(OOMD, labels=grades, colors=colors, pctdistance = 0.85,
+        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.165)
 
         plt.subplot(the_grid[1, 2], aspect=1, title='OE')
-        plt.pie(OE, labels=grades, colors=colors, pctdistance = 0.8,
-        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
+        plt.pie(OE, labels=grades, colors=colors, pctdistance = 0.85,
+        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.165)
 
         plt.subplot(the_grid[2, 0], aspect=1, title='SD Lab')
-        plt.pie(SD_Lab, labels=grades, colors=colors, pctdistance = 0.8,
-        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
+        plt.pie(SD_Lab, labels=grades, colors=colors, pctdistance = 0.85,
+        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.165)
 
         plt.subplot(the_grid[2, 1], aspect=1, title='CG Lab')
-        plt.pie(CG_Lab, labels=grades, colors=colors, pctdistance = 0.78,
-        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
+        plt.pie(CG_Lab, labels=grades, colors=colors, pctdistance = 0.85,
+        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.165)
 
         plt.subplot(the_grid[2, 2], aspect=1, title='CIP')
-        plt.pie(CIP, labels=grades, colors=colors, pctdistance = 0.8,
-        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.175)
+        plt.pie(CIP, labels=grades, colors=colors, pctdistance = 0.85,
+        autopct='%.0f%%', textprops={'size': 'smaller'}, shadow=True, startangle=90, radius=1.165)
 
         plt.suptitle('6th semester ' + divisions[division] + ' Division Overall performance', fontsize=16)
         plt.show()
@@ -1342,7 +1342,7 @@ while(number == 1 or number == 2 or number == 0 or number == 3 or number == 4):
         plt.show()'''
 
         plt.hist([Sort_SGPA_A,Sort_SGPA_B,Sort_SGPA_C,Sort_SGPA_D],
-                bins=[0,1,2,3,4,5,6,7,8,9,10,11],rwidth=0.85)
+                bins=[0,1,2,3,4,5,6,7,8,9,10,11],rwidth=0.75)
         plt.grid(axis='y', alpha=0.5)
         plt.xlabel("SGPA")
         plt.ylabel('Number of Students')
