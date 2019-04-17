@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
-import numpy as np
+#import numpy as np
 
 #function to provide Overall summary Division wise
 def division_summary(division):
